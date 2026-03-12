@@ -1,0 +1,2947 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='bcrop_executive_dashboard' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='Dark Purple' type='regular'>
+      <color>#6d2998</color>
+      <color>#862998</color>
+      <color>#984294</color>
+      <color>#986395</color>
+      <color>#987894</color>
+    </color-palette>
+    <color-palette custom='true' name='Purple' type='regular'>
+      <color>#eec9e5</color>
+      <color>#e7bada</color>
+      <color>#dcadcd</color>
+      <color>#d1a0c0</color>
+      <color>#c792b5</color>
+      <color>#bc86a9</color>
+      <color>#b0799f</color>
+      <color>#a06f99</color>
+      <color>#916491</color>
+      <color>#865986</color>
+      <color>#7c4d79</color>
+    </color-palette>
+    <color-palette custom='true' name='Purple Palette' type='regular'>
+      <color>#8c6181</color>
+      <color>#c290b4</color>
+      <color>#d4a6c8</color>
+      <color>#eab8dd</color>
+    </color-palette>
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
+        <calculation class='tableau' formula='&quot;Governance&quot;' />
+        <members>
+          <member value='&quot;Community&quot;' />
+          <member value='&quot;Customers&quot;' />
+          <member value='&quot;Environment&quot;' />
+          <member value='&quot;Governance&quot;' />
+          <member value='&quot;Workers&quot;' />
+        </members>
+      </column>
+      <column caption='Select Industry' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Accommodation &amp; food service&quot;'>
+        <calculation class='tableau' formula='&quot;Accommodation &amp; food service&quot;' />
+        <members>
+          <member value='&quot;Accommodation &amp; food service&quot;' />
+          <member value='&quot;Administrative &amp; support services&quot;' />
+          <member value='&quot;Agriculture, forestry &amp; fishing&quot;' />
+          <member value='&quot;Arts, entertainment &amp; recreation&quot;' />
+          <member value='&quot;Construction&quot;' />
+          <member value='&quot;Education&quot;' />
+          <member value='&quot;Energy&quot;' />
+          <member value='&quot;Energy, Heating &amp; Cooling&quot;' />
+          <member value='&quot;Financial &amp; insurance activities&quot;' />
+          <member value='&quot;Human health &amp; social work&quot;' />
+          <member value='&quot;Information, communication &amp; technology&quot;' />
+          <member value='&quot;Manufactured Goods&quot;' />
+          <member value='&quot;Other services&quot;' />
+          <member value='&quot;Professional &amp; technical services&quot;' />
+          <member value='&quot;Publishing - Print&quot;' />
+          <member value='&quot;Real estate, design &amp; building&quot;' />
+          <member value='&quot;Rental &amp; Repair&quot;' />
+          <member value='&quot;Retail&quot;' />
+          <member value='&quot;Transportation &amp; storage&quot;' />
+          <member value='&quot;Waste Management &amp; Recycling&quot;' />
+          <member value='&quot;Water &amp; Sewerage&quot;' />
+          <member value='&quot;Wholesale&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='bcorp_certified_latest_tableau' inline='true' name='federated.08qekmk1t77db116ouqrp1pc2tm0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='bcorp_certified_latest_tableau' name='textscan.1f5t7r607q0lw21bvo3xm0dwxlct'>
+            <connection class='textscan' directory='D:/Projects/B-Crop-Social-Impact/data/processed' filename='bcorp_certified_latest_tableau.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1f5t7r607q0lw21bvo3xm0dwxlct' name='bcorp_certified_latest_tableau.csv' table='[bcorp_certified_latest_tableau#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='company_id' ordinal='0' />
+            <column datatype='string' name='company_name' ordinal='1' />
+            <column datatype='string' name='current_status' ordinal='2' />
+            <column datatype='real' name='overall_score' ordinal='3' />
+            <column datatype='date' name='date_first_certified' ordinal='4' />
+            <column datatype='date' date-parse-format='yyyy-MM-dd HH:mm:ss.SSSSSSZZZZZ' name='date_certified' ordinal='5' />
+            <column datatype='string' name='industry' ordinal='6' />
+            <column datatype='string' name='industry_category' ordinal='7' />
+            <column datatype='string' name='products_and_services' ordinal='8' />
+            <column datatype='string' name='country' ordinal='9' />
+            <column datatype='string' name='state' ordinal='10' />
+            <column datatype='string' name='city' ordinal='11' />
+            <column datatype='string' name='sector' ordinal='12' />
+            <column datatype='string' name='size' ordinal='13' />
+            <column datatype='integer' name='impact_area_community' ordinal='14' />
+            <column datatype='real' name='impact_area_customers' ordinal='15' />
+            <column datatype='real' name='impact_area_environment' ordinal='16' />
+            <column datatype='real' name='impact_area_governance' ordinal='17' />
+            <column datatype='real' name='impact_area_workers' ordinal='18' />
+            <column datatype='integer' name='first_cert_year' ordinal='19' />
+            <column datatype='integer' name='certified_year' ordinal='20' />
+            <column datatype='real' name='years_since_first_certification' ordinal='21' />
+            <column datatype='string' name='score_band' ordinal='22' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>company_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[company_id]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>company_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>company_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[company_name]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>company_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>current_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[current_status]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>current_status</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>overall_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[overall_score]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>overall_score</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_first_certified</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date_first_certified]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>date_first_certified</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_certified</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date_certified]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>date_certified</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>industry</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>industry_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[industry_category]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>industry_category</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>products_and_services</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[products_and_services]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>products_and_services</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>city</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sector</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sector]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>sector</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[size]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>size</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>impact_area_community</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[impact_area_community]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>impact_area_community</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>impact_area_customers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[impact_area_customers]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>impact_area_customers</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>impact_area_environment</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[impact_area_environment]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>impact_area_environment</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>impact_area_governance</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[impact_area_governance]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>impact_area_governance</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>impact_area_workers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[impact_area_workers]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>impact_area_workers</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_cert_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[first_cert_year]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>first_cert_year</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>certified_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[certified_year]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>certified_year</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years_since_first_certification</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[years_since_first_certification]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>years_since_first_certification</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>score_band</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[score_band]</local-name>
+            <parent-name>[bcorp_certified_latest_tableau.csv]</parent-name>
+            <remote-alias>score_band</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_community:qk]&quot;' value='Community' />
+          <alias key='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_customers:qk]&quot;' value='Customers' />
+          <alias key='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_environment:qk]&quot;' value='Environment' />
+          <alias key='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_governance:qk]&quot;' value='Governance' />
+          <alias key='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_workers:qk]&quot;' value='Workers' />
+        </aliases>
+      </column>
+      <column caption='Top Impact Area' datatype='string' name='[Calculation_2606989963350017]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF ZN([impact_area_community]) &gt;= ZN([impact_area_customers])&#13;&#10;AND ZN([impact_area_community]) &gt;= ZN([impact_area_environment])&#13;&#10;AND ZN([impact_area_community]) &gt;= ZN([impact_area_governance])&#13;&#10;AND ZN([impact_area_community]) &gt;= ZN([impact_area_workers])&#13;&#10;THEN &quot;Community&quot;&#13;&#10;&#13;&#10;ELSEIF ZN([impact_area_customers]) &gt;= ZN([impact_area_community])&#13;&#10;AND ZN([impact_area_customers]) &gt;= ZN([impact_area_environment])&#13;&#10;AND ZN([impact_area_customers]) &gt;= ZN([impact_area_governance])&#13;&#10;AND ZN([impact_area_customers]) &gt;= ZN([impact_area_workers])&#13;&#10;THEN &quot;Customers&quot;&#13;&#10;&#13;&#10;ELSEIF ZN([impact_area_environment]) &gt;= ZN([impact_area_community])&#13;&#10;AND ZN([impact_area_environment]) &gt;= ZN([impact_area_customers])&#13;&#10;AND ZN([impact_area_environment]) &gt;= ZN([impact_area_governance])&#13;&#10;AND ZN([impact_area_environment]) &gt;= ZN([impact_area_workers])&#13;&#10;THEN &quot;Environment&quot;&#13;&#10;&#13;&#10;ELSEIF ZN([impact_area_governance]) &gt;= ZN([impact_area_community])&#13;&#10;AND ZN([impact_area_governance]) &gt;= ZN([impact_area_customers])&#13;&#10;AND ZN([impact_area_governance]) &gt;= ZN([impact_area_environment])&#13;&#10;AND ZN([impact_area_governance]) &gt;= ZN([impact_area_workers])&#13;&#10;THEN &quot;Governance&quot;&#13;&#10;&#13;&#10;ELSEIF ZN([impact_area_workers]) &gt;= ZN([impact_area_community])&#13;&#10;AND ZN([impact_area_workers]) &gt;= ZN([impact_area_customers])&#13;&#10;AND ZN([impact_area_workers]) &gt;= ZN([impact_area_environment])&#13;&#10;AND ZN([impact_area_workers]) &gt;= ZN([impact_area_governance])&#13;&#10;THEN &quot;Workers&quot;&#13;&#10;&#13;&#10;ELSE &quot;Missing/Unknown&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Score Above Threshold' datatype='real' name='[Calculation_2606989966938115]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[overall_score] - 80' />
+      </column>
+      <column caption='Selected Metric Value' datatype='real' name='[Calculation_2606989969367045]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Community&quot; THEN [impact_area_community]&#13;&#10;WHEN &quot;Customers&quot; THEN [impact_area_customers]&#13;&#10;WHEN &quot;Environment&quot; THEN [impact_area_environment]&#13;&#10;WHEN &quot;Governance&quot; THEN [impact_area_governance]&#13;&#10;WHEN &quot;Workers&quot; THEN [impact_area_workers]&#13;&#10;END' />
+      </column>
+      <column caption='bcorp_certified_latest_tableau.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7]' role='measure' type='quantitative' />
+      <column caption='Certified Year' datatype='integer' name='[certified_year]' role='dimension' type='quantitative' />
+      <column caption='City' datatype='string' name='[city]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Company Id' datatype='string' name='[company_id]' role='dimension' type='nominal' />
+      <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Current Status' datatype='string' name='[current_status]' role='dimension' type='nominal' />
+      <column caption='Date Certified' datatype='date' name='[date_certified]' role='dimension' type='ordinal' />
+      <column caption='Date First Certified' datatype='date' name='[date_first_certified]' role='dimension' type='ordinal' />
+      <column caption='First Cert Year' datatype='integer' name='[first_cert_year]' role='dimension' type='quantitative' />
+      <column caption='Community' datatype='integer' name='[impact_area_community]' role='measure' type='quantitative' />
+      <column caption='Customers' datatype='real' name='[impact_area_customers]' role='measure' type='quantitative' />
+      <column caption='Environment' datatype='real' name='[impact_area_environment]' role='measure' type='quantitative' />
+      <column caption='Governance' datatype='real' name='[impact_area_governance]' role='measure' type='quantitative' />
+      <column caption='Workers' datatype='real' name='[impact_area_workers]' role='measure' type='quantitative' />
+      <column caption='Industry' datatype='string' name='[industry]' role='dimension' type='nominal' />
+      <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+      <column caption='Overall Score' datatype='real' name='[overall_score]' role='measure' type='quantitative' />
+      <column caption='Products And Services' datatype='string' name='[products_and_services]' role='dimension' type='nominal' />
+      <column caption='Score Band' datatype='string' name='[score_band]' role='dimension' type='nominal' />
+      <column caption='Sector' datatype='string' name='[sector]' role='dimension' type='nominal' />
+      <column caption='Size' datatype='string' name='[size]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+      <column-instance column='[impact_area_community]' derivation='Avg' name='[avg:impact_area_community:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_customers]' derivation='Avg' name='[avg:impact_area_customers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_environment]' derivation='Avg' name='[avg:impact_area_environment:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_governance]' derivation='Avg' name='[avg:impact_area_governance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_workers]' derivation='Avg' name='[avg:impact_area_workers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[overall_score]' derivation='Avg' name='[avg:overall_score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2606989963350017]' derivation='None' name='[none:Calculation_2606989963350017:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_2606989965500418]' derivation='None' name='[none:Calculation_2606989965500418:nk]' pivot='key' type='nominal' />
+      <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+      <column-instance column='[industry_category]' derivation='None' name='[none:industry_category:nk]' pivot='key' type='nominal' />
+      <column-instance column='[score_band]' derivation='None' name='[none:score_band:nk]' pivot='key' type='nominal' />
+      <column-instance column='[impact_area_community]' derivation='Sum' name='[sum:impact_area_community:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_customers]' derivation='Sum' name='[sum:impact_area_customers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_environment]' derivation='Sum' name='[sum:impact_area_environment:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_governance]' derivation='Sum' name='[sum:impact_area_governance:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[impact_area_workers]' derivation='Sum' name='[sum:impact_area_workers:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[overall_score]' derivation='Sum' name='[sum:overall_score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[years_since_first_certification]' derivation='Sum' name='[sum:years_since_first_certification:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Certification Age Group)' hidden='true' name='[Action (Certification Age Group)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2606989965500418]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Company Name,Country)' hidden='true' name='[Action (Company Name,Country)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[company_name]' />
+          <groupfilter function='level-members' level='[country]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Industry Category)' hidden='true' name='[Action (Industry Category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[industry_category]' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='country, state, city'>
+          <field>[country]</field>
+          <field>[state]</field>
+          <field>[city]</field>
+        </drill-path>
+      </drill-paths>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/SHEETA~1/AppData/Local/Temp/TableauTemp/#TableauTemp_1k1zabi02z1ce81dl8za50e7npbw.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>company_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[company_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>company_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7039</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>company_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[company_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>company_name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7039</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>current_status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[current_status]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>current_status</remote-alias>
+              <ordinal>2</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>overall_score</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[overall_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>overall_score</remote-alias>
+              <ordinal>3</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>605</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_first_certified</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date_first_certified]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_first_certified</remote-alias>
+              <ordinal>4</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1697</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_certified</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date_certified]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date_certified</remote-alias>
+              <ordinal>5</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1211</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>industry</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industry</remote-alias>
+              <ordinal>6</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>177</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>industry_category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[industry_category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>industry_category</remote-alias>
+              <ordinal>7</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>products_and_services</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[products_and_services]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>products_and_services</remote-alias>
+              <ordinal>8</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3347</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>9</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>73</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>state</remote-alias>
+              <ordinal>10</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>city</remote-alias>
+              <ordinal>11</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1401</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sector</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sector]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sector</remote-alias>
+              <ordinal>12</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>size</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[size]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>size</remote-alias>
+              <ordinal>13</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>impact_area_community</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[impact_area_community]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>impact_area_community</remote-alias>
+              <ordinal>14</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>impact_area_customers</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[impact_area_customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>impact_area_customers</remote-alias>
+              <ordinal>15</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>526</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>impact_area_environment</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[impact_area_environment]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>impact_area_environment</remote-alias>
+              <ordinal>16</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>564</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>impact_area_governance</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[impact_area_governance]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>impact_area_governance</remote-alias>
+              <ordinal>17</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>219</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>impact_area_workers</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[impact_area_workers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>impact_area_workers</remote-alias>
+              <ordinal>18</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>425</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>first_cert_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[first_cert_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>first_cert_year</remote-alias>
+              <ordinal>19</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>certified_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[certified_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>certified_year</remote-alias>
+              <ordinal>20</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>years_since_first_certification</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[years_since_first_certification]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>years_since_first_certification</remote-alias>
+              <ordinal>21</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>149</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>score_band</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[score_band]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>score_band</remote-alias>
+              <ordinal>22</ordinal>
+              <family>bcorp_certified_latest_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.926573' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0734266' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:score_band:nk]' palette='red_gold_10_0' type='palette'>
+            <map to='#b71d3e'>
+              <bucket>&quot;Below 80&quot;</bucket>
+            </map>
+            <map to='#d54a45'>
+              <bucket>&quot;120+&quot;</bucket>
+            </map>
+            <map to='#ee734a'>
+              <bucket>&quot;100-119.9&quot;</bucket>
+            </map>
+            <map to='#f4d166'>
+              <bucket>&quot;80-89.9&quot;</bucket>
+            </map>
+            <map to='#faa04f'>
+              <bucket>&quot;90-99.9&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:country:nk]' palette='purple_pink_gray_10_0' type='palette'>
+            <map to='#7c7270'>
+              <bucket>&quot;Bolivia&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;Denmark&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;Honduras&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;Kenya&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;New Zealand&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;Senegal&quot;</bucket>
+            </map>
+            <map to='#7c7270'>
+              <bucket>&quot;Tanzania&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Afghanistan&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Cambodia&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Estonia&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;India&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Luxembourg&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Paraguay&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;Slovenia&quot;</bucket>
+            </map>
+            <map to='#8074a8'>
+              <bucket>&quot;United Arab Emirates&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Belize&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Cyprus&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Guatemala&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Japan&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Myanmar&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Rwanda&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Switzerland&quot;</bucket>
+            </map>
+            <map to='#9b93c9'>
+              <bucket>&quot;Vietnam&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Bangladesh&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Colombia&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Ghana&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Israel&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Mexico&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Portugal&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Sri Lanka&quot;</bucket>
+            </map>
+            <map to='#9c9290'>
+              <bucket>&quot;Vanuatu&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Bulgaria&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Ecuador&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Hungary&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Lebanon&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Norway&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Singapore&quot;</bucket>
+            </map>
+            <map to='#b173a0'>
+              <bucket>&quot;Turkey&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;Australia&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;Chile&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;France&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;Iran&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;Malaysia&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;Philippines&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;South Korea&quot;</bucket>
+            </map>
+            <map to='#c46487'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Belgium&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Costa Rica&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Greece&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Italy&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Mozambique&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Puerto Rico&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Sweden&quot;</bucket>
+            </map>
+            <map to='#c5bfbe'>
+              <bucket>&quot;Venezuela&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Argentina&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Finland&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Indonesia&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Madagascar&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;Peru&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;South Africa&quot;</bucket>
+            </map>
+            <map to='#c6c1f0'>
+              <bucket>&quot;United Kingdom&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Burkina Faso&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Egypt&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Iceland&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Liechtenstein&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Panama&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Slovakia&quot;</bucket>
+            </map>
+            <map to='#c799bc'>
+              <bucket>&quot;Uganda&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Benin&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Czech Republic&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Haiti&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Jersey&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Netherlands The&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Saudi Arabia&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Taiwan&quot;</bucket>
+            </map>
+            <map to='#ddb5d5'>
+              <bucket>&quot;Zambia&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Brazil&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Dominican Republic&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Hong Kong S.A.R.&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Latvia&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Nicaragua&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Serbia&quot;</bucket>
+            </map>
+            <map to='#f498b6'>
+              <bucket>&quot;Thailand&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Austria&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;China&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Germany&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Ireland&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Mauritius&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Poland&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Spain&quot;</bucket>
+            </map>
+            <map to='#ffbed1'>
+              <bucket>&quot;Uruguay&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:industry_category:nk]' palette='Purple' type='palette'>
+            <map to='#865986'>
+              <bucket>&quot;Human health &amp; social work&quot;</bucket>
+            </map>
+            <map to='#865986'>
+              <bucket>&quot;Transportation &amp; storage&quot;</bucket>
+            </map>
+            <map to='#865986'>
+              <bucket>&quot;Water &amp; Sewerage&quot;</bucket>
+            </map>
+            <map to='#865986'>
+              <bucket>&quot;Wholesale&quot;</bucket>
+            </map>
+            <map to='#916491'>
+              <bucket>&quot;Financial &amp; insurance activities&quot;</bucket>
+            </map>
+            <map to='#916491'>
+              <bucket>&quot;Publishing - Print&quot;</bucket>
+            </map>
+            <map to='#916491'>
+              <bucket>&quot;Rental &amp; Repair&quot;</bucket>
+            </map>
+            <map to='#a06f99'>
+              <bucket>&quot;Energy, Heating &amp; Cooling&quot;</bucket>
+            </map>
+            <map to='#a06f99'>
+              <bucket>&quot;Professional &amp; technical services&quot;</bucket>
+            </map>
+            <map to='#a06f99'>
+              <bucket>&quot;Waste Management &amp; Recycling&quot;</bucket>
+            </map>
+            <map to='#b0799f'>
+              <bucket>&quot;Energy&quot;</bucket>
+            </map>
+            <map to='#b0799f'>
+              <bucket>&quot;Information, communication &amp; technology&quot;</bucket>
+            </map>
+            <map to='#b0799f'>
+              <bucket>&quot;Retail&quot;</bucket>
+            </map>
+            <map to='#bc86a9'>
+              <bucket>&quot;Education&quot;</bucket>
+            </map>
+            <map to='#bc86a9'>
+              <bucket>&quot;Real estate, design &amp; building&quot;</bucket>
+            </map>
+            <map to='#c792b5'>
+              <bucket>&quot;Construction&quot;</bucket>
+            </map>
+            <map to='#c792b5'>
+              <bucket>&quot;Manufactured Goods&quot;</bucket>
+            </map>
+            <map to='#d1a0c0'>
+              <bucket>&quot;Arts, entertainment &amp; recreation&quot;</bucket>
+            </map>
+            <map to='#dcadcd'>
+              <bucket>&quot;Agriculture, forestry &amp; fishing&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;Other services&quot;</bucket>
+            </map>
+            <map to='#e7bada'>
+              <bucket>&quot;Administrative &amp; support services&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;Accommodation &amp; food service&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' palette='Dark Purple' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_community:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_workers:qk]&quot;</bucket>
+            </map>
+            <map to='#6d2998'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_workers:qk]&quot;</bucket>
+            </map>
+            <map to='#7c4d79'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:years_since_first_certification:qk]&quot;</bucket>
+            </map>
+            <map to='#862998'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_environment:qk]&quot;</bucket>
+            </map>
+            <map to='#984294'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_governance:qk]&quot;</bucket>
+            </map>
+            <map to='#986395'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_customers:qk]&quot;</bucket>
+            </map>
+            <map to='#987894'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_community:qk]&quot;</bucket>
+            </map>
+            <map to='#a5729b'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]&quot;</bucket>
+            </map>
+            <map to='#a5729b'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:overall_score:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_customers:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_environment:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_governance:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2606989963350017:nk]' palette='sf_water' type='palette'>
+            <map to='#0e6ece'>
+              <bucket>&quot;Workers&quot;</bucket>
+            </map>
+            <map to='#2d9ced'>
+              <bucket>&quot;Governance&quot;</bucket>
+            </map>
+            <map to='#68ceee'>
+              <bucket>&quot;Environment&quot;</bucket>
+            </map>
+            <map to='#96f2ee'>
+              <bucket>&quot;Customers&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2606989965500418:nk]' palette='Purple Palette' type='palette'>
+            <map to='#8c6181'>
+              <bucket>&quot;0-2 years&quot;</bucket>
+            </map>
+            <map to='#c290b4'>
+              <bucket>&quot;3-5 years&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;6-9 years&quot;</bucket>
+            </map>
+            <map to='#eab8dd'>
+              <bucket>&quot;10+ years&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
+          <calculation class='tableau' formula='&quot;Governance&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='bcorp_certified_latest_tableau.csv' id='bcorp_certified_latest_tableau.csv_57BD158FAC464F078C6114CFDF3328F7'>
+            <properties context=''>
+              <relation connection='textscan.1f5t7r607q0lw21bvo3xm0dwxlct' name='bcorp_certified_latest_tableau.csv' table='[bcorp_certified_latest_tableau#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='company_id' ordinal='0' />
+                  <column datatype='string' name='company_name' ordinal='1' />
+                  <column datatype='string' name='current_status' ordinal='2' />
+                  <column datatype='real' name='overall_score' ordinal='3' />
+                  <column datatype='date' name='date_first_certified' ordinal='4' />
+                  <column datatype='date' date-parse-format='yyyy-MM-dd HH:mm:ss.SSSSSSZZZZZ' name='date_certified' ordinal='5' />
+                  <column datatype='string' name='industry' ordinal='6' />
+                  <column datatype='string' name='industry_category' ordinal='7' />
+                  <column datatype='string' name='products_and_services' ordinal='8' />
+                  <column datatype='string' name='country' ordinal='9' />
+                  <column datatype='string' name='state' ordinal='10' />
+                  <column datatype='string' name='city' ordinal='11' />
+                  <column datatype='string' name='sector' ordinal='12' />
+                  <column datatype='string' name='size' ordinal='13' />
+                  <column datatype='integer' name='impact_area_community' ordinal='14' />
+                  <column datatype='real' name='impact_area_customers' ordinal='15' />
+                  <column datatype='real' name='impact_area_environment' ordinal='16' />
+                  <column datatype='real' name='impact_area_governance' ordinal='17' />
+                  <column datatype='real' name='impact_area_workers' ordinal='18' />
+                  <column datatype='integer' name='first_cert_year' ordinal='19' />
+                  <column datatype='integer' name='certified_year' ordinal='20' />
+                  <column datatype='real' name='years_since_first_certification' ordinal='21' />
+                  <column datatype='string' name='score_band' ordinal='22' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Highlight Industries' name='[Action1_418A4F371C1441C3836BD9B5DAC7883A]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Executive Dashboard' type='sheet' worksheet='Industry Metric Selector' />
+      <command command='tsc:brush'>
+        <param name='exclude' value='Certification Trend,Avg Score/Certification Age,Country Map,Impact Area Comparison,KPI- Avg Years Since First Certification,KPI- Industries Represented,Industry Metric Selector,KPI- Countries Represented,KPI- Avg Overall Score,KPI- Total Companies' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Executive Dashboard' />
+      </command>
+    </action>
+    <action caption='Country Map filters dashboard' name='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Executive Dashboard' type='sheet' worksheet='Country Map' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Country Map,KPI- Countries Represented,KPI- Avg Overall Score,KPI- Industries Represented,KPI- Avg Years Since First Certification,KPI- Total Companies' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Executive Dashboard' />
+      </command>
+    </action>
+    <action caption='Certification Age filters dashboard' name='[Action3_333A836DD81F4D93B6138CCD9CDA2D5D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Executive Dashboard' type='sheet' worksheet='Avg Score/Certification Age' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Certification Trend,Avg Score/Certification Age,KPI- Countries Represented,KPI- Avg Overall Score,KPI- Industries Represented,KPI- Avg Years Since First Certification,KPI- Total Companies' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Executive Dashboard' />
+      </command>
+    </action>
+    <action caption='Certification Age filters dashboard' name='[Action4_3D322C451830468E9D43E64B537D105D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Executive Dashboard' type='sheet' worksheet='Industry Metric Selector' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Certification Trend,KPI- Industries Represented,KPI- Avg Years Since First Certification,Industry Metric Selector,KPI- Countries Represented,KPI- Avg Overall Score,KPI- Total Companies' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Executive Dashboard' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Avg Score/Certification Age'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Average Score by Certification Age Group</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[overall_score]' derivation='Avg' name='[avg:overall_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Company Id' datatype='string' name='[company_id]' role='dimension' type='nominal' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[company_id]' derivation='CountD' name='[ctd:company_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_2606989965500418]' derivation='None' name='[none:Calculation_2606989965500418:nk]' pivot='key' type='nominal' />
+            <column caption='Overall Score' datatype='real' name='[overall_score]' role='measure' type='quantitative' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[company_name]' />
+              <groupfilter function='level-members' level='[country]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]'>
+            <groupfilter function='level-members' level='[industry_category]' user:ui-action-filter='[Action4_3D322C451830468E9D43E64B537D105D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;10+ years&quot;</bucket>
+              <bucket>&quot;6-9 years&quot;</bucket>
+              <bucket>&quot;3-5 years&quot;</bucket>
+              <bucket>&quot;0-2 years&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' value='112' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' />
+              <tooltip column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Certification Age Group:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Avg.  Score:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Companies:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]</cols>
+      </table>
+      <simple-id uuid='{0302B6BE-137F-4ED0-9C33-BF7606D8DB4D}' />
+    </worksheet>
+    <worksheet name='Certification Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Certification Trend </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Company Id' datatype='string' name='[company_id]' role='dimension' type='nominal' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[company_id]' derivation='CountD' name='[ctd:company_id:qk]' pivot='key' type='quantitative' />
+            <column caption='First Cert Year' datatype='integer' name='[first_cert_year]' role='dimension' type='quantitative' />
+            <column-instance column='[first_cert_year]' derivation='None' name='[none:first_cert_year:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[company_name]' />
+              <groupfilter function='level-members' level='[country]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:first_cert_year:qk]' scope='cols' value='Certified Year' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' palette='purple_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Year:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:first_cert_year:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Companies:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='highlight' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:first_cert_year:qk]</cols>
+      </table>
+      <simple-id uuid='{55DEEC46-BCAF-47DB-90F5-AC05349ABFEC}' />
+    </worksheet>
+    <worksheet name='Country Map'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Certified B Crops by Country</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[overall_score]' derivation='Avg' name='[avg:overall_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+            <column-instance column='[company_name]' derivation='None' name='[none:company_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Overall Score' datatype='real' name='[overall_score]' role='measure' type='quantitative' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]'>
+            <groupfilter function='level-members' level='[Calculation_2606989965500418]' user:ui-action-filter='[Action3_333A836DD81F4D93B6138CCD9CDA2D5D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]'>
+            <groupfilter function='level-members' level='[industry_category]' user:ui-action-filter='[Action4_3D322C451830468E9D43E64B537D105D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Longitude (generated)]' field-type='quantitative' max='23718013.366682366' min='-10799724.985311892' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Latitude (generated)]' field-type='quantitative' max='12921235.27547325' min='-6050983.3271614853' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' />
+              <lod column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' />
+              <tooltip column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]' />
+              <lod column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' />
+              <lod column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:company_name:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Company Name:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:company_name:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Avg. Overall Score:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Latitude (generated)]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{435B7DBC-8E80-4104-A68B-1B40965C9893}' />
+    </worksheet>
+    <worksheet name='Impact Area Comparison'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Average Impact Area Scores</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[impact_area_community]' derivation='Avg' name='[avg:impact_area_community:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[impact_area_customers]' derivation='Avg' name='[avg:impact_area_customers:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[impact_area_environment]' derivation='Avg' name='[avg:impact_area_environment:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[impact_area_governance]' derivation='Avg' name='[avg:impact_area_governance:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[impact_area_workers]' derivation='Avg' name='[avg:impact_area_workers:qk]' pivot='key' type='quantitative' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Community' datatype='integer' name='[impact_area_community]' role='measure' type='quantitative' />
+            <column caption='Customers' datatype='real' name='[impact_area_customers]' role='measure' type='quantitative' />
+            <column caption='Environment' datatype='real' name='[impact_area_environment]' role='measure' type='quantitative' />
+            <column caption='Governance' datatype='real' name='[impact_area_governance]' role='measure' type='quantitative' />
+            <column caption='Workers' datatype='real' name='[impact_area_workers]' role='measure' type='quantitative' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+            <column-instance column='[impact_area_customers]' derivation='Sum' name='[sum:impact_area_customers:qk]' pivot='key' type='quantitative' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_community:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_customers:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_environment:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_governance:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_workers:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_workers:qk]&quot;</bucket>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_environment:qk]&quot;</bucket>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_governance:qk]&quot;</bucket>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_customers:qk]&quot;</bucket>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:impact_area_community:qk]&quot;</bucket>
+              <bucket>&quot;[federated.08qekmk1t77db116ouqrp1pc2tm0].[sum:impact_area_customers:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]'>
+            <groupfilter function='level-members' level='[Calculation_2606989965500418]' user:ui-action-filter='[Action3_333A836DD81F4D93B6138CCD9CDA2D5D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[company_name]' />
+              <groupfilter function='level-members' level='[country]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]'>
+            <groupfilter function='level-members' level='[industry_category]' user:ui-action-filter='[Action4_3D322C451830468E9D43E64B537D105D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Multiple Values]' value='false' />
+            <format attr='break-on-special' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Multiple Values]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Multiple Values]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontcolor='#555555'><![CDATA[Impact Area:	<[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#555555'><![CDATA[Average Score : <[federated.08qekmk1t77db116ouqrp1pc2tm0].[Multiple Values]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{6A0AA1F3-DE58-413C-99C8-97EAE1537C6F}' />
+    </worksheet>
+    <worksheet name='Industry Metric Selector'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Average &lt;</run>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>[Parameters].[Parameter 1]</run>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>&gt; Metric by Industry Category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
+              <calculation class='tableau' formula='&quot;Governance&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Selected Metric Value' datatype='real' name='[Calculation_2606989969367045]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Community&quot; THEN [impact_area_community]&#13;&#10;WHEN &quot;Customers&quot; THEN [impact_area_customers]&#13;&#10;WHEN &quot;Environment&quot; THEN [impact_area_environment]&#13;&#10;WHEN &quot;Governance&quot; THEN [impact_area_governance]&#13;&#10;WHEN &quot;Workers&quot; THEN [impact_area_workers]&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_2606989969367045]' derivation='Avg' name='[avg:Calculation_2606989969367045:qk]' pivot='key' type='quantitative' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Community' datatype='integer' name='[impact_area_community]' role='measure' type='quantitative' />
+            <column caption='Customers' datatype='real' name='[impact_area_customers]' role='measure' type='quantitative' />
+            <column caption='Environment' datatype='real' name='[impact_area_environment]' role='measure' type='quantitative' />
+            <column caption='Governance' datatype='real' name='[impact_area_governance]' role='measure' type='quantitative' />
+            <column caption='Workers' datatype='real' name='[impact_area_workers]' role='measure' type='quantitative' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+            <column-instance column='[industry_category]' derivation='None' name='[none:industry_category:nk]' pivot='key' type='nominal' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]'>
+            <groupfilter function='level-members' level='[Calculation_2606989965500418]' user:ui-action-filter='[Action3_333A836DD81F4D93B6138CCD9CDA2D5D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[company_name]' />
+              <groupfilter function='level-members' level='[country]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='AVG([Calculation_2606989969367045])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:industry_category:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' scope='cols' value='Average Metric Value' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' value='216' />
+            <format attr='height-header' value='19' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' num-steps='120' reverse='true' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#e1d7e8</color>
+                <color>#d2bedf</color>
+                <color>#c4a7d6</color>
+                <color>#b691cd</color>
+                <color>#a87cc4</color>
+                <color>#9b69bb</color>
+                <color>#8f57b2</color>
+                <color>#8346a9</color>
+                <color>#7737a0</color>
+                <color>#6d2998</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]</cols>
+      </table>
+      <simple-id uuid='{6272AA99-56C9-4D03-9DD1-BCEB0AE497D8}' />
+    </worksheet>
+    <worksheet name='KPI- Avg Overall Score'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#00007f' fontsize='26'>Avg Score</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column-instance column='[overall_score]' derivation='Avg' name='[avg:overall_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Overall Score' datatype='real' name='[overall_score]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='1046' />
+            <format attr='height' value='632' />
+            <format attr='text-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]' value='center' />
+            <format attr='text-format' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]' value='n0.0;-0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='28'>&lt;</run>
+                <run bold='true' fontsize='28'>[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]</run>
+                <run bold='true' fontsize='28'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{86A24D77-4CE9-4FD0-A912-762983604BCA}' />
+    </worksheet>
+    <worksheet name='KPI- Avg Years Since First Certification'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#00007f' fontsize='26'>Avg Cert Years</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column-instance column='[years_since_first_certification]' derivation='Avg' name='[avg:years_since_first_certification:qk]' pivot='key' type='quantitative' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='977' />
+            <format attr='height' value='614' />
+            <format attr='text-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:years_since_first_certification:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:years_since_first_certification:qk]' value='center' />
+            <format attr='text-format' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:years_since_first_certification:qk]' value='n#,##0.0;-#,##0.0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:years_since_first_certification:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='28'>&lt;</run>
+                <run bold='true' fontsize='28'>[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:years_since_first_certification:qk]</run>
+                <run bold='true' fontsize='28'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1ABB9DA3-12DB-4331-A00F-E3A6DE7B541B}' />
+    </worksheet>
+    <worksheet name='KPI- Countries Represented'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#00007f' fontsize='26'>Countries</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country]' derivation='CountD' name='[ctd:country:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:country:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:country:qk]' value='center' />
+            <format attr='width' value='1034' />
+            <format attr='height' value='638' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:country:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='28'>&lt;</run>
+                <run bold='true' fontsize='28'>[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:country:qk]</run>
+                <run bold='true' fontsize='28'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{63185960-E153-4B92-92DB-5F7BA55B45DF}' />
+    </worksheet>
+    <worksheet name='KPI- Industries Represented'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#00007f' fontsize='26'>Industries</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column-instance column='[industry_category]' derivation='CountD' name='[ctd:industry_category:qk]' pivot='key' type='quantitative' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:industry_category:qk]' value='center' />
+            <format attr='vertical-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:industry_category:qk]' value='center' />
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='width' value='1001' />
+            <format attr='height' value='630' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:industry_category:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='28'>&lt;</run>
+                <run bold='true' fontsize='28'>[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:industry_category:qk]</run>
+                <run bold='true' fontsize='28'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{23F3B1A5-5B72-456F-B7C5-71643D09B2DB}' />
+    </worksheet>
+    <worksheet name='KPI- Total Companies'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#00007f' fontsize='26'>Total Companies</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Company Id' datatype='string' name='[company_id]' role='dimension' type='nominal' />
+            <column-instance column='[company_id]' derivation='CountD' name='[ctd:company_id:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' value='n0;-0' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' value='center' />
+            <format attr='width' value='1096' />
+            <format attr='height' value='618' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='28'>&lt;</run>
+                <run bold='true' fontsize='28'>[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]</run>
+                <run bold='true' fontsize='28'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2D39155E-1C7F-48FF-AC21-76603A831091}' />
+    </worksheet>
+    <worksheet name='Score Above Threshold/Industry'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#5c2075' fontsize='10'>Industry Score Above Threshold</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bcorp_certified_latest_tableau' name='federated.08qekmk1t77db116ouqrp1pc2tm0' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
+              <calculation class='tableau' formula='&quot;Governance&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
+            <column caption='Certification Age Group' datatype='string' name='[Calculation_2606989965500418]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [years_since_first_certification] &lt; 3 THEN &quot;0-2 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 6 THEN &quot;3-5 years&quot;&#13;&#10;ELSEIF [years_since_first_certification] &lt; 10 THEN &quot;6-9 years&quot;&#13;&#10;ELSE &quot;10+ years&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Score Above Threshold' datatype='real' name='[Calculation_2606989966938115]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[overall_score] - 80' />
+            </column>
+            <column caption='Selected Metric Value' datatype='real' name='[Calculation_2606989969367045]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;WHEN &quot;Community&quot; THEN [impact_area_community]&#13;&#10;WHEN &quot;Customers&quot; THEN [impact_area_customers]&#13;&#10;WHEN &quot;Environment&quot; THEN [impact_area_environment]&#13;&#10;WHEN &quot;Governance&quot; THEN [impact_area_governance]&#13;&#10;WHEN &quot;Workers&quot; THEN [impact_area_workers]&#13;&#10;END' />
+            </column>
+            <column-instance column='[company_id]' derivation='Attribute' name='[attr:company_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2606989966938115]' derivation='Avg' name='[avg:Calculation_2606989966938115:qk]' pivot='key' type='quantitative' />
+            <column caption='Company Id' datatype='string' name='[company_id]' role='dimension' type='nominal' />
+            <column caption='Company Name' datatype='string' name='[company_name]' role='dimension' type='nominal' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[company_id]' derivation='CountD' name='[ctd:company_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Community' datatype='integer' name='[impact_area_community]' role='measure' type='quantitative' />
+            <column caption='Customers' datatype='real' name='[impact_area_customers]' role='measure' type='quantitative' />
+            <column caption='Environment' datatype='real' name='[impact_area_environment]' role='measure' type='quantitative' />
+            <column caption='Governance' datatype='real' name='[impact_area_governance]' role='measure' type='quantitative' />
+            <column caption='Workers' datatype='real' name='[impact_area_workers]' role='measure' type='quantitative' />
+            <column caption='Industry Category' datatype='string' name='[industry_category]' role='dimension' type='nominal' />
+            <column-instance column='[industry_category]' derivation='None' name='[none:industry_category:nk]' pivot='key' type='nominal' />
+            <column caption='Overall Score' datatype='real' name='[overall_score]' role='measure' type='quantitative' />
+            <column caption='Years Since First Certification' datatype='real' name='[years_since_first_certification]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]'>
+            <groupfilter function='level-members' level='[Calculation_2606989965500418]' user:ui-action-filter='[Action3_333A836DD81F4D93B6138CCD9CDA2D5D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_ACC60E9E011C469EA7E3204E9FC8313B]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[company_name]' />
+              <groupfilter function='level-members' level='[country]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]'>
+            <groupfilter function='level-members' level='[industry_category]' user:ui-action-filter='[Action4_3D322C451830468E9D43E64B537D105D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[attr:company_id:nk]'>
+            <groupfilter function='level-members' level='[attr:company_id:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='AVG([Calculation_2606989969367045])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:industry_category:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <alphabetic-sort column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' direction='ASC' />
+          <slices>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[attr:company_id:nk]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Company Name,Country)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Certification Age Group)]</column>
+            <column>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Action (Industry Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' value='212' />
+            <format attr='height-header' value='19' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' />
+              <tooltip column='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Industry Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Avg. Score Above Threshold:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989966938115:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Companies:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]</rows>
+        <cols>[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989966938115:qk]</cols>
+      </table>
+      <simple-id uuid='{28599B3F-5C94-45FE-8BFF-B35B612CE590}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Executive Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#51065d' fontname='Benton Sans Book' fontsize='36'>Certified B Corps Overview</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl-title'>
+          <_.fcp.IndividualControlFormatting.true...format attr='text-align' field='[Parameters].[Parameter 1]' value='center' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
+          <calculation class='tableau' formula='&quot;Governance&quot;' />
+          <members>
+            <member value='&quot;Community&quot;' />
+            <member value='&quot;Customers&quot;' />
+            <member value='&quot;Environment&quot;' />
+            <member value='&quot;Governance&quot;' />
+            <member value='&quot;Workers&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97766' id='27' param='vert' type-v2='layout-flow' w='98678' x='661' y='1117'>
+            <zone h='9218' id='28' type-v2='title' w='98678' x='661' y='1117'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='88548' id='8' param='vert' type-v2='layout-flow' w='98678' x='661' y='10335'>
+              <zone h='88548' id='11' param='horz' type-v2='layout-flow' w='98678' x='661' y='10335' />
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='13966' id='16' name='KPI- Avg Years Since First Certification' w='20035' x='79879' y='10335'>
+          <layout-cache cell-count-w='1' non-cell-size-w='1' type-h='cell' type-w='cell' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding-right' value='3' />
+            <format attr='padding-bottom' value='3' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='286' h='13966' id='15' is-fixed='true' name='KPI- Industries Represented' w='20035' x='59757' y='10475'>
+          <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding-right' value='3' />
+            <format attr='padding-bottom' value='3' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='221' h='13966' id='14' is-fixed='true' name='KPI- Countries Represented' w='16132' x='43712' y='10475'>
+          <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding-right' value='3' />
+            <format attr='padding-bottom' value='3' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='265' h='13966' id='13' is-fixed='true' name='KPI- Avg Overall Score' w='17606' x='26106' y='10475'>
+          <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding' value='2' />
+            <format attr='padding-top' value='0' />
+            <format attr='padding-right' value='3' />
+            <format attr='padding-bottom' value='3' />
+            <format attr='padding-left' value='0' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='290' h='13966' id='12' is-fixed='true' name='KPI- Total Companies' w='25325' x='867' y='10335'>
+          <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='padding' value='3' />
+            <format attr='padding-top' value='0' />
+            <format attr='padding-bottom' value='3' />
+            <format attr='padding-left' value='0' />
+          </zone-style>
+        </zone>
+        <zone h='36732' id='18' name='Country Map' w='34345' x='694' y='26257'>
+          <zone-style>
+            <format attr='border-color' value='#e6e6e6' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+        <zone h='36872' id='19' name='Certification Trend' w='34380' x='661' y='62989'>
+          <zone-style>
+            <format attr='border-color' value='#e6e6e6' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+        <zone h='34078' id='20' name='Industry Metric Selector' w='34132' x='64793' y='28911'>
+          <zone-style>
+            <format attr='border-color' value='#e6e6e6' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+        <zone custom-title='true' h='2514' id='22' mode='compact' param='[Parameters].[Parameter 1]' show-title='false' type-v2='paramctrl' w='31405' x='66281' y='26257'>
+          <formatted-text>
+            <run bold='true' fontalignment='0' fontcolor='#757500'>Select Metric</run>
+          </formatted-text>
+        </zone>
+        <zone h='36872' id='23' name='Impact Area Comparison' w='29669' x='35124' y='63128'>
+          <zone-style>
+            <format attr='border-color' value='#e6e6e6' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+        <zone h='36732' id='24' name='Avg Score/Certification Age' w='29669' x='35124' y='26257'>
+          <zone-style>
+            <format attr='border-color' value='#d4d4d4' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+        <zone h='36872' id='25' name='Score Above Threshold/Industry' w='34132' x='64793' y='63128'>
+          <zone-style>
+            <format attr='border-color' value='#e6e6e6' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#51065d' fontname='Benton Sans Book' fontsize='36'>Certified B Corps Overview</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='2450' minheight='2450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97766' id='33' param='vert' type-v2='layout-flow' w='98678' x='661' y='1117'>
+                <zone h='9218' id='28' type-v2='title' w='98678' x='661' y='1117'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='13966' id='12' is-fixed='true' name='KPI- Total Companies' w='25325' x='867' y='10335'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='108' h='13966' id='16' is-fixed='true' name='KPI- Avg Years Since First Certification' w='20035' x='79879' y='10335'>
+                  <layout-cache cell-count-w='1' non-cell-size-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='109' h='13966' id='13' is-fixed='true' name='KPI- Avg Overall Score' w='17606' x='26106' y='10475'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='109' h='13966' id='14' is-fixed='true' name='KPI- Countries Represented' w='16132' x='43712' y='10475'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='109' h='13966' id='15' is-fixed='true' name='KPI- Industries Represented' w='20035' x='59757' y='10475'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='63' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36732' id='18' is-fixed='true' name='Country Map' w='34345' x='694' y='26257'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36732' id='24' is-fixed='true' name='Avg Score/Certification Age' w='29669' x='35124' y='26257'>
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' h='2514' id='22' mode='compact' param='[Parameters].[Parameter 1]' show-title='false' type-v2='paramctrl' w='31405' x='66281' y='26257'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='0' fontcolor='#757500'>Select Metric</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='271' h='34078' id='20' is-fixed='true' name='Industry Metric Selector' w='34132' x='64793' y='28911'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36872' id='19' is-fixed='true' name='Certification Trend' w='34380' x='661' y='62989'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36872' id='23' is-fixed='true' name='Impact Area Comparison' w='29669' x='35124' y='63128'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36872' id='25' is-fixed='true' name='Score Above Threshold/Industry' w='34132' x='64793' y='63128'>
+                  <zone-style>
+                    <format attr='border-color' value='#e6e6e6' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{2576153F-434F-4028-93C6-68A6B32699CC}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Executive Dashboard'>
+      <viewpoints>
+        <viewpoint name='Avg Score/Certification Age'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Certification Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Country Map'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+        <viewpoint name='Impact Area Comparison'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Industry Metric Selector'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI- Avg Overall Score'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI- Avg Years Since First Certification'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI- Countries Represented'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI- Industries Represented'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='KPI- Total Companies'>
+          <zoom type='entire-view' />
+          <floating-toolbar-visibility value='1' />
+        </viewpoint>
+        <viewpoint name='Score Above Threshold/Industry'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='22' />
+      <simple-id uuid='{94DA9BC2-C0B4-467E-8632-5515BD3E9E44}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Avg Score/Certification Age'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C00067C2-AF36-4E29-9620-6865BE867F54}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Certification Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[ctd:company_id:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A99CC60D-272C-4A9B-BCC8-36760B702F74}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Country Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{66606529-7904-4142-92D6-678C8EC5B873}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Impact Area Comparison'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]' show-morefewerbutton='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C7F49D7D-C12A-42EB-B91E-80005CD21627}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Industry Metric Selector'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{622FDC9A-31EE-4068-B438-C43C0E678280}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI- Avg Overall Score'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A4838E87-AEAF-434E-B6D7-E4386BB861AE}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI- Avg Years Since First Certification'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{8503BDB2-CE33-4568-9F38-4509406DDBDA}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI- Countries Represented'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{E9FB33F4-3EFB-4D0F-B07E-1E62929BBBC3}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI- Industries Represented'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D26E71FE-870F-4090-9B2A-F334A38AB1E8}' />
+    </window>
+    <window class='worksheet' hidden='true' name='KPI- Total Companies'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DEE907A9-B609-46C6-BF74-484DBA9DAA11}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Score Above Threshold/Industry'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:industry_category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{3345D994-4184-46AF-8C4F-94EEF3DBB903}' />
+    </window>
+  </windows>
+</workbook>
