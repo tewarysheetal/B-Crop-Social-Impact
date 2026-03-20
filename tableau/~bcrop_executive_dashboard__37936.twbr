@@ -23,7 +23,7 @@
     <WorksheetBackgroundTransparency />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='bcrop_executive_dashboard' path='/workbooks' revision='1.0' />
+  <repository-location id='bcrop_executive_dashboard' path='/workbooks' revision='1.1' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -57,8 +57,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
-        <calculation class='tableau' formula='&quot;Governance&quot;' />
+      <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Community&quot;'>
+        <calculation class='tableau' formula='&quot;Community&quot;' />
         <members>
           <member value='&quot;Community&quot;' />
           <member value='&quot;Customers&quot;' />
@@ -1166,9 +1166,6 @@
           </encoding>
           <encoding attr='color' field='[none:industry_category:nk]' palette='Purple' type='palette'>
             <map to='#865986'>
-              <bucket>&quot;Human health &amp; social work&quot;</bucket>
-            </map>
-            <map to='#865986'>
               <bucket>&quot;Transportation &amp; storage&quot;</bucket>
             </map>
             <map to='#865986'>
@@ -1176,9 +1173,6 @@
             </map>
             <map to='#865986'>
               <bucket>&quot;Wholesale&quot;</bucket>
-            </map>
-            <map to='#916491'>
-              <bucket>&quot;Financial &amp; insurance activities&quot;</bucket>
             </map>
             <map to='#916491'>
               <bucket>&quot;Publishing - Print&quot;</bucket>
@@ -1199,13 +1193,13 @@
               <bucket>&quot;Energy&quot;</bucket>
             </map>
             <map to='#b0799f'>
-              <bucket>&quot;Information, communication &amp; technology&quot;</bucket>
+              <bucket>&quot;Other services&quot;</bucket>
             </map>
             <map to='#b0799f'>
               <bucket>&quot;Retail&quot;</bucket>
             </map>
             <map to='#bc86a9'>
-              <bucket>&quot;Education&quot;</bucket>
+              <bucket>&quot;Information, communication &amp; technology&quot;</bucket>
             </map>
             <map to='#bc86a9'>
               <bucket>&quot;Real estate, design &amp; building&quot;</bucket>
@@ -1214,22 +1208,28 @@
               <bucket>&quot;Construction&quot;</bucket>
             </map>
             <map to='#c792b5'>
+              <bucket>&quot;Human health &amp; social work&quot;</bucket>
+            </map>
+            <map to='#c792b5'>
               <bucket>&quot;Manufactured Goods&quot;</bucket>
             </map>
             <map to='#d1a0c0'>
-              <bucket>&quot;Arts, entertainment &amp; recreation&quot;</bucket>
+              <bucket>&quot;Financial &amp; insurance activities&quot;</bucket>
             </map>
             <map to='#dcadcd'>
               <bucket>&quot;Agriculture, forestry &amp; fishing&quot;</bucket>
             </map>
-            <map to='#e377c2'>
-              <bucket>&quot;Other services&quot;</bucket>
+            <map to='#dcadcd'>
+              <bucket>&quot;Education&quot;</bucket>
             </map>
             <map to='#e7bada'>
-              <bucket>&quot;Administrative &amp; support services&quot;</bucket>
+              <bucket>&quot;Arts, entertainment &amp; recreation&quot;</bucket>
             </map>
             <map to='#eec9e5'>
               <bucket>&quot;Accommodation &amp; food service&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;Administrative &amp; support services&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[:Measure Names]' palette='Dark Purple' type='palette'>
@@ -1307,8 +1307,8 @@
         <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
       </semantic-values>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
-          <calculation class='tableau' formula='&quot;Governance&quot;' />
+        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Community&quot;'>
+          <calculation class='tableau' formula='&quot;Community&quot;' />
         </column>
       </datasource-dependencies>
       <object-graph>
@@ -1543,9 +1543,9 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='mark-labels-show' value='false' />
-                <format attr='mark-labels-cull' value='false' />
-                <format attr='mark-labels-mode' value='highlight' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
               </style-rule>
             </style>
           </pane>
@@ -1630,6 +1630,12 @@
                 <run bold='true'><![CDATA[<[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:overall_score:qk]>]]></run>
               </formatted-text>
             </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows>[federated.08qekmk1t77db116ouqrp1pc2tm0].[Latitude (generated)]</rows>
@@ -1762,8 +1768,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
-              <calculation class='tableau' formula='&quot;Governance&quot;' />
+            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Community&quot;'>
+              <calculation class='tableau' formula='&quot;Community&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
@@ -2206,8 +2212,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
-              <calculation class='tableau' formula='&quot;Governance&quot;' />
+            <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Community&quot;'>
+              <calculation class='tableau' formula='&quot;Community&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.08qekmk1t77db116ouqrp1pc2tm0'>
@@ -2329,8 +2335,8 @@
         <datasource name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Governance&quot;'>
-          <calculation class='tableau' formula='&quot;Governance&quot;' />
+        <column caption='Select Metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Community&quot;'>
+          <calculation class='tableau' formula='&quot;Community&quot;' />
           <members>
             <member value='&quot;Community&quot;' />
             <member value='&quot;Customers&quot;' />
@@ -2476,8 +2482,8 @@
           </layout-options>
           <size maxheight='2450' minheight='2450' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='97766' id='33' param='vert' type-v2='layout-flow' w='98678' x='661' y='1117'>
+            <zone h='100000' id='36' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97766' id='35' param='vert' type-v2='layout-flow' w='98678' x='661' y='1117'>
                 <zone h='9218' id='28' type-v2='title' w='98678' x='661' y='1117'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2618,7 +2624,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='30'>
-    <window class='dashboard' maximized='true' name='Executive Dashboard'>
+    <window class='dashboard' name='Executive Dashboard'>
       <viewpoints>
         <viewpoint name='Avg Score/Certification Age'>
           <zoom type='entire-view' />
@@ -2659,7 +2665,122 @@
       <active id='22' />
       <simple-id uuid='{94DA9BC2-C0B4-467E-8632-5515BD3E9E44}' />
     </window>
-    <window class='worksheet' hidden='true' name='Avg Score/Certification Age'>
+    <window class='worksheet' name='KPI- Total Companies'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DEE907A9-B609-46C6-BF74-484DBA9DAA11}' />
+    </window>
+    <window class='worksheet' name='KPI- Avg Overall Score'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{A4838E87-AEAF-434E-B6D7-E4386BB861AE}' />
+    </window>
+    <window class='worksheet' name='KPI- Countries Represented'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{E9FB33F4-3EFB-4D0F-B07E-1E62929BBBC3}' />
+    </window>
+    <window class='worksheet' name='KPI- Industries Represented'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D26E71FE-870F-4090-9B2A-F334A38AB1E8}' />
+    </window>
+    <window class='worksheet' name='KPI- Avg Years Since First Certification'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{8503BDB2-CE33-4568-9F38-4509406DDBDA}' />
+    </window>
+    <window class='worksheet' name='Country Map'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2678,16 +2799,13 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' type='color' />
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{C00067C2-AF36-4E29-9620-6865BE867F54}' />
+      <simple-id uuid='{66606529-7904-4142-92D6-678C8EC5B873}' />
     </window>
-    <window class='worksheet' hidden='true' name='Certification Trend'>
+    <window class='worksheet' maximized='true' name='Certification Trend'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2715,7 +2833,7 @@
       </viewpoint>
       <simple-id uuid='{A99CC60D-272C-4A9B-BCC8-36760B702F74}' />
     </window>
-    <window class='worksheet' hidden='true' name='Country Map'>
+    <window class='worksheet' name='Industry Metric Selector'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2734,13 +2852,17 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:country:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' type='color' />
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{66606529-7904-4142-92D6-678C8EC5B873}' />
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{622FDC9A-31EE-4068-B438-C43C0E678280}' />
     </window>
-    <window class='worksheet' hidden='true' name='Impact Area Comparison'>
+    <window class='worksheet' name='Impact Area Comparison'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2770,7 +2892,7 @@
       </viewpoint>
       <simple-id uuid='{C7F49D7D-C12A-42EB-B91E-80005CD21627}' />
     </window>
-    <window class='worksheet' hidden='true' name='Industry Metric Selector'>
+    <window class='worksheet' name='Avg Score/Certification Age'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2789,132 +2911,16 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
-            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[avg:Calculation_2606989969367045:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.08qekmk1t77db116ouqrp1pc2tm0].[none:Calculation_2606989965500418:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
         <zoom type='entire-view' />
       </viewpoint>
-      <simple-id uuid='{622FDC9A-31EE-4068-B438-C43C0E678280}' />
+      <simple-id uuid='{C00067C2-AF36-4E29-9620-6865BE867F54}' />
     </window>
-    <window class='worksheet' hidden='true' name='KPI- Avg Overall Score'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{A4838E87-AEAF-434E-B6D7-E4386BB861AE}' />
-    </window>
-    <window class='worksheet' hidden='true' name='KPI- Avg Years Since First Certification'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{8503BDB2-CE33-4568-9F38-4509406DDBDA}' />
-    </window>
-    <window class='worksheet' hidden='true' name='KPI- Countries Represented'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{E9FB33F4-3EFB-4D0F-B07E-1E62929BBBC3}' />
-    </window>
-    <window class='worksheet' hidden='true' name='KPI- Industries Represented'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{D26E71FE-870F-4090-9B2A-F334A38AB1E8}' />
-    </window>
-    <window class='worksheet' hidden='true' name='KPI- Total Companies'>
-      <cards>
-        <edge name='left'>
-          <strip size='100'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{DEE907A9-B609-46C6-BF74-484DBA9DAA11}' />
-    </window>
-    <window class='worksheet' hidden='true' name='Score Above Threshold/Industry'>
+    <window class='worksheet' name='Score Above Threshold/Industry'>
       <cards>
         <edge name='left'>
           <strip size='160'>
